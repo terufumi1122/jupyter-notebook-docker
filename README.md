@@ -20,7 +20,7 @@ $ docker-compose up
 ### 2. Chromeでjupyter-notebookを起動
 
 1. `http://localhost:8888/`にアクセス`
-2. `docker-compose up`のあとにでている下記トークンをブラウザ上の`token`にコピペ
+2. `docker-compose up`のあとにログが走っているので、下記のようなログを探し、トークンをブラウザ上の`token`にコピペし、`login`
 ※トークンは起動毎に変わるため、下記は一例
 
 ```shell
@@ -44,17 +44,19 @@ token=275b5b6f2bfa85fb5facb7d31eed03d94e84407d6b74999
 ```
 
 3. jupyter-notebookの右上にある「New」から「Python 3」を選択
-4. 新規ファイルが出来るので、あとはPythonを書いてCommand+Enterで書いたコードを実行。お好きにどうぞ！
+4. 新規ファイルが出来るので、あとはPythonを書いてCommand+Enter(MacOSの場合)で書いたコードを実行。お好きにどうぞ！
 
 ---
 
-コンテナ内に入りたいとき
+### 3. その他
+
+#### コンテナ内に入りたいとき
 
 ```shell
 $ docker-compose exec jupyter-notebook /bin/bash
 ```
 
-コンテナを破棄するとき
+#### コンテナを破棄するとき
 ※コンテナ内`/var`配下で作成したファイルはローカルPCに残ります
 
 ```shell
